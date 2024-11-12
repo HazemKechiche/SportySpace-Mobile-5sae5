@@ -20,21 +20,17 @@ public class AddParticipation extends AppCompatActivity {
 
         ImageView backArrow = findViewById(R.id.back_arrow3);
 
-        // Set the OnClickListener for the "Retour" button
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Finish the current activity to return to the previous screen
                 finish();
             }
         });
 
-        // References to form fields
         EditText teamName = findViewById(R.id.nomequipe);
         EditText leaderName = findViewById(R.id.leadername);
         EditText numberOfMembers = findViewById(R.id.nombremembres);
 
-        // Handle form submission
         findViewById(R.id.btn_submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
