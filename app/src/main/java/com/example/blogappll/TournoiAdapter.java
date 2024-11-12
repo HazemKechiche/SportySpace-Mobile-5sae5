@@ -55,6 +55,7 @@ public class TournoiAdapter extends RecyclerView.Adapter<TournoiAdapter.TournoiV
         holder.title.setText(Tournoi.title);
         holder.description.setText(Tournoi.description);
         holder.prix.setText(Tournoi.prix);
+        holder.nombrePlace.setText(Tournoi.nombrePlace);
 
         if (Tournoi.imageUri != null && !Tournoi.imageUri.isEmpty()) {
             Uri imageUri = Uri.parse(Tournoi.imageUri);
@@ -73,6 +74,7 @@ public class TournoiAdapter extends RecyclerView.Adapter<TournoiAdapter.TournoiV
             intent.putExtra("title", Tournoi.title);
             intent.putExtra("description", Tournoi.description);
             intent.putExtra("prix", Tournoi.prix);
+            intent.putExtra("Nombre Place", Tournoi.nombrePlace);
             intent.putExtra("imageUri", Tournoi.imageUri);
             holder.itemView.getContext().startActivity(intent);
         });
@@ -119,7 +121,7 @@ public class TournoiAdapter extends RecyclerView.Adapter<TournoiAdapter.TournoiV
 
     // ViewHolder pour les éléments de la liste
     public static class TournoiViewHolder extends RecyclerView.ViewHolder {
-        TextView title, description, prix;
+        TextView title, description, prix,nombrePlace;
         ImageView image;
         ImageButton deleteButton, updateButton;
 
@@ -129,6 +131,7 @@ public class TournoiAdapter extends RecyclerView.Adapter<TournoiAdapter.TournoiV
             description = itemView.findViewById(R.id.btn_desc);
             prix = itemView.findViewById(R.id.btn_auth);
             image = itemView.findViewById(R.id.image_tmb);
+            nombrePlace = itemView.findViewById(R.id.btn_nombreplace);
             deleteButton = itemView.findViewById(R.id.delete_button);
             updateButton = itemView.findViewById(R.id.update_button);
         }

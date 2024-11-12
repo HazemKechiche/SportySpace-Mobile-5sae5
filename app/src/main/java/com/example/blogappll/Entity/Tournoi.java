@@ -14,4 +14,5 @@ public class Tournoi implements Serializable {  // Implement Serializable
     public String description;
     public String prix;
     public String imageUri;  // Store the URI of the image in the database
+    public String nombrePlace;  // Added the number of available spots for the tournament
 }

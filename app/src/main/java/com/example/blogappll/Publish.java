@@ -50,6 +50,7 @@ public class Publish extends AppCompatActivity {
         EditText titleField = findViewById(R.id.b_title);
         EditText descField = findViewById(R.id.btn_desc);
         EditText prixField = findViewById(R.id.btn_auth);
+        EditText nombrePlaceField = findViewById(R.id.btn_nombreplace);
 
         // Get reference to the back arrow ImageView
         ImageView backArrow = findViewById(R.id.back_arrow3);  // Assuming you added the ImageView for the back arrow in XML
@@ -68,7 +69,7 @@ public class Publish extends AppCompatActivity {
             TournoiId = intent.getIntExtra("Tournoi_id", -1);
             if (TournoiId != -1) {
                 Log.d("PublishActivity", "TournoiId received: " + TournoiId);
-                loadTournoiData(TournoiId, titleField, descField, prixField);
+                loadTournoiData(TournoiId, titleField, descField, prixField,nombrePlaceField);
             } else {
                 Log.e("PublishActivity", "Invalid TournoiId received");
             }
@@ -85,9 +86,9 @@ public class Publish extends AppCompatActivity {
         btnPublish.setOnClickListener(v -> {
             if (validateFields()) {  // Vérifier la validité du formulaire avant de publier
                 if (TournoiId != -1) {
-                    updateTournoi(titleField.getText().toString(), descField.getText().toString(), prixField.getText().toString());
+                    updateTournoi(titleField.getText().toString(), descField.getText().toString(), prixField.getText().toString(), nombrePlaceField.getText().toString());
                 } else {
-                    insertTournoi(titleField.getText().toString(), descField.getText().toString(), prixField.getText().toString());
+                    insertTournoi(titleField.getText().toString(), descField.getText().toString(), prixField.getText().toString(), nombrePlaceField.getText().toString());
                 }
                 returnToHome();  // Retourner à l'écran d'accueil
             }
@@ -152,12 +153,13 @@ public class Publish extends AppCompatActivity {
         }
     }
 
-    private void loadTournoiData(int id, EditText titleField, EditText descField, EditText prixField) {
+    private void loadTournoiData(int id, EditText titleField, EditText descField, EditText prixField,EditText nombrePlaceField) {
         Tournoi Tournoi = db.TournoiDao().getTournoiById(id);
         if (Tournoi != null) {
             titleField.setText(Tournoi.title);
             descField.setText(Tournoi.description);
             prixField.setText(Tournoi.prix);
+            nombrePlaceField.setText(Tournoi.nombrePlace);
             if (Tournoi.imageUri != null) {
                 imageUri = Uri.parse(Tournoi.imageUri);
                 imageView.setImageURI(imageUri);
@@ -171,22 +173,24 @@ public class Publish extends AppCompatActivity {
         }
     }
 
-    private void insertTournoi(String title, String description, String prix) {
+    private void insertTournoi(String title, String description, String prix, String nombrePlace) {
         Tournoi Tournoi = new Tournoi();
         Tournoi.title = title;
         Tournoi.description = description;
         Tournoi.prix = prix;
+        Tournoi.nombrePlace = nombrePlace;
         Tournoi.imageUri = imageUri != null ? imageUri.toString() : null;
         db.TournoiDao().insert(Tournoi);
         Toast.makeText(this, "Tournoi published successfully", Toast.LENGTH_SHORT).show();
     }
 
-    private void updateTournoi(String title, String description, String prix) {
+    private void updateTournoi(String title, String description, String prix, String nombrePlace) {
         Tournoi Tournoi = db.TournoiDao().getTournoiById(TournoiId);
         if (Tournoi != null) {
             Tournoi.title = title;
             Tournoi.description = description;
             Tournoi.prix = prix;
+            Tournoi.nombrePlace = nombrePlace;
             if (imageUri != null) {
                 Tournoi.imageUri = imageUri.toString();
             }
@@ -199,6 +203,7 @@ public class Publish extends AppCompatActivity {
         EditText titleField = findViewById(R.id.b_title);
         EditText descField = findViewById(R.id.btn_desc);
         EditText prixField = findViewById(R.id.btn_auth);
+        EditText nombrePlaceField = findViewById(R.id.btn_nombreplace);
 
         if (titleField.getText().toString().isEmpty()) {
             titleField.setError("Title is required");
@@ -210,6 +215,10 @@ public class Publish extends AppCompatActivity {
         }
         if (prixField.getText().toString().isEmpty()) {
             prixField.setError("prix is required");
+            return false;
+        }
+        if (nombrePlaceField.getText().toString().isEmpty()) {
+            nombrePlaceField.setError("Nombre Place is required");
             return false;
         }
         return true;

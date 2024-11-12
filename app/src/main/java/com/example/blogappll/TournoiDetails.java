@@ -17,7 +17,6 @@ public class TournoiDetails extends AppCompatActivity {
         setContentView(R.layout.activity_blog_details);
 
 
-
         // Get references to the UI components
         TextView title = findViewById(R.id.blog_details_title);
         TextView description = findViewById(R.id.blog_details_description);

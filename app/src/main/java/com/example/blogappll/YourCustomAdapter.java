@@ -43,6 +43,7 @@ public class YourCustomAdapter extends RecyclerView.Adapter<YourCustomAdapter.Vi
         holder.title.setText(Tournoi.title);
         holder.description.setText(Tournoi.description);
         holder.prix.setText(Tournoi.prix);
+        holder.nombrePlace.setText(Tournoi.nombrePlace);
 
         holder.deleteButton.setOnClickListener(v -> {
             // Perform deletion on a background thread
@@ -66,7 +67,7 @@ public class YourCustomAdapter extends RecyclerView.Adapter<YourCustomAdapter.Vi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title, description, prix;
+        TextView title, description, prix,nombrePlace;
         ImageButton deleteButton;  // Add the delete button reference
         ImageView image;
         public ViewHolder(View itemView) {
@@ -74,6 +75,7 @@ public class YourCustomAdapter extends RecyclerView.Adapter<YourCustomAdapter.Vi
             title = itemView.findViewById(R.id.b_title);
             description = itemView.findViewById(R.id.btn_desc);
             prix = itemView.findViewById(R.id.btn_auth);
+            nombrePlace = itemView.findViewById(R.id.btn_nombreplace);
 
             deleteButton = itemView.findViewById(R.id.delete_button);  // Bind the delete button
         }
