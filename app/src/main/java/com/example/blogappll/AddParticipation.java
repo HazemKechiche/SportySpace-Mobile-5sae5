@@ -31,6 +31,7 @@ public class AddParticipation extends AppCompatActivity {
         EditText leaderName = findViewById(R.id.leadername);
         EditText numberOfMembers = findViewById(R.id.nombremembres);
 
+
         findViewById(R.id.btn_submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
