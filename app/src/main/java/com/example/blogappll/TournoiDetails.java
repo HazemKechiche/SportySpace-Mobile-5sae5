@@ -16,6 +16,8 @@ public class TournoiDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog_details);
 
+
+
         // Get references to the UI components
         TextView title = findViewById(R.id.blog_details_title);
         TextView description = findViewById(R.id.blog_details_description);
@@ -55,11 +57,18 @@ public class TournoiDetails extends AppCompatActivity {
         }
 
         // Find the "Participate" button and set the click listener
-        Button participateButton = findViewById(R.id.btn_participate);
+        Button participateButton = findViewById(R.id.btn_participate); // Make sure this ID matches your layout
         participateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TournoiDetails.this, AddParticipation.class);
+
+                // Pass data to the AddParticipation activity
+                intent.putExtra("title", TournoiTitle);
+                intent.putExtra("description", TournoiDescription);
+                intent.putExtra("prix", Tournoiprix);
+                intent.putExtra("imageUri", imageUri);
+
                 startActivity(intent);
             }
         });

@@ -1,10 +1,15 @@
 package com.example.blogappll;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.blogappll.Database.ParticipantDatabase;
+import com.example.blogappll.Entity.Participant;
+import java.util.concurrent.Executors;
 
 public class AddParticipation extends AppCompatActivity {
 
@@ -13,29 +18,63 @@ public class AddParticipation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_participation);
 
+        ImageView backArrow = findViewById(R.id.back_arrow3);
+
+        // Set the OnClickListener for the "Retour" button
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Finish the current activity to return to the previous screen
+                finish();
+            }
+        });
+
         // References to form fields
-        EditText nomequipe = findViewById(R.id.nomequipe);
-        EditText leadername = findViewById(R.id.leadername);
-        EditText nombremembres = findViewById(R.id.nombremembres);
+        EditText teamName = findViewById(R.id.nomequipe);
+        EditText leaderName = findViewById(R.id.leadername);
+        EditText numberOfMembers = findViewById(R.id.nombremembres);
 
         // Handle form submission
         findViewById(R.id.btn_submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the form values
-                String equipe = nomequipe.getText().toString();
-                String leader = leadername.getText().toString();
-                String membres = nombremembres.getText().toString();
+                String equipe = teamName.getText().toString().trim();
+                String leader = leaderName.getText().toString().trim();
+                String membersString = numberOfMembers.getText().toString().trim();
 
-                // Simple validation
-                if (equipe.isEmpty() || leader.isEmpty() || membres.isEmpty()) {
+                // Validate input
+                if (equipe.isEmpty() || leader.isEmpty() || membersString.isEmpty()) {
                     Toast.makeText(AddParticipation.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Show a message or process the data (e.g., save to database)
-                    Toast.makeText(AddParticipation.this, "Participation added successfully!", Toast.LENGTH_SHORT).show();
-                    // Optionally, navigate back to TournoiDetails or another screen
-                    finish();
+                    return;
                 }
+
+                int members;
+                try {
+                    members = Integer.parseInt(membersString);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(AddParticipation.this, "Invalid number of members", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Create a Participant and add it to the database
+                Participant participant = new Participant(equipe, leader, members);
+                Executors.newSingleThreadExecutor().execute(() -> {
+                    ParticipantDatabase.getInstance(AddParticipation.this).participantDao().insertParticipant(participant);
+                    runOnUiThread(() -> {
+                        Toast.makeText(AddParticipation.this, "Participation added successfully!", Toast.LENGTH_SHORT).show();
+
+                        // Navigate back to Home Fragment
+                        Intent intent = new Intent(AddParticipation.this, MainActivity.class);  // Assuming MainActivity hosts the Home fragment
+                        intent.putExtra("navigate_to_home", true); // Optional: signal to navigate to Home
+                        startActivity(intent);
+                        finish();  // Close AddParticipation activity
+                    });
+                });
+
+                // Optionally clear the form
+                teamName.setText("");
+                leaderName.setText("");
+                numberOfMembers.setText("");
             }
         });
     }
