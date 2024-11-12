@@ -18,9 +18,11 @@
         android:theme="@style/Theme.BlogAppLL"
         tools:targetApi="31">
         <activity
+            android:name=".AddParticipation"
+            android:exported="false" />
+        <activity
             android:name=".TournoiDetails"
-            android:exported="true" />
-        <!-- Activities -->
+            android:exported="true" /> <!-- Activities -->
         <activity
             android:name=".Publish"
             android:exported="true" /> <!-- Keep exported false if internal use only -->

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,7 @@ public class TournoiDetails extends AppCompatActivity {
             public void onClick(View v) {
                 onBackPressed();  // This will take the user back to the previous activity or fragment
             }
+
         });
 
         // Receive data from the intent
@@ -51,5 +53,15 @@ public class TournoiDetails extends AppCompatActivity {
         } else {
             image.setImageResource(R.drawable.ic_launcher_background);  // Default image if no URI
         }
+
+        // Find the "Participate" button and set the click listener
+        Button participateButton = findViewById(R.id.btn_participate);
+        participateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TournoiDetails.this, AddParticipation.class);
+                startActivity(intent);
+            }
+        });
     }
 }

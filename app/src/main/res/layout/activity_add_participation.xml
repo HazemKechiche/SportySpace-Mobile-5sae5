@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Nomequipe (Team Name) -->
+    <EditText
+        android:id="@+id/nomequipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nomequipe"
+        android:inputType="text" />
+
+    <!-- Leader Name -->
+    <EditText
+        android:id="@+id/leadername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Leader Name"
+        android:inputType="text" />
+
+    <!-- Number of Members -->
+    <EditText
+        android:id="@+id/nombremembres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number of Members"
+        android:inputType="number" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Participation"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

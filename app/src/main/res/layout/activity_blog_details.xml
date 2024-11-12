@@ -24,20 +24,22 @@
 
 
         <!-- Blog Image -->
+
+        <!-- Blog Title -->
         <ImageView
             android:id="@+id/blog_details_image"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="199dp"
+            android:layout_marginTop="-16dp"
             android:contentDescription="Blog Image"
             android:scaleType="centerCrop" />
 
-        <!-- Blog Title -->
         <TextView
             android:id="@+id/blog_details_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Blog Title"
+            android:layout_marginTop="8dp"
+            android:text="Tournamant Title"
             android:textColor="#074207"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -47,8 +49,8 @@
             android:id="@+id/blog_details_author"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Author"
+            android:layout_marginTop="6dp"
+            android:text="Price"
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -58,9 +60,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Blog description goes here"
+            android:text="Tournemant Description"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_participate"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#074207"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="Participate"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
 
     </LinearLayout>
 </ScrollView>
