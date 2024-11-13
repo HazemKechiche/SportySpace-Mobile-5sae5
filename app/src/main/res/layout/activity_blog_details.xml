@@ -41,7 +41,7 @@
             android:layout_marginTop="8dp"
             android:text="Tournamant Title"
             android:textColor="#074207"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <!-- Blog Author -->
@@ -49,7 +49,7 @@
             android:id="@+id/blog_details_author"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:text="Price"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -59,17 +59,17 @@
             android:id="@+id/blog_details_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:text="Tournemant Description"
             android:textColor="#000000"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btn_participate"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="4dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#074207"
             android:fontFamily="@font/poppins_semibold"
