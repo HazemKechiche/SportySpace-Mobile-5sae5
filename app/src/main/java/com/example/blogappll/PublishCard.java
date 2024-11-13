@@ -48,9 +48,9 @@ public class PublishCard extends AppCompatActivity {
                 .build();
 
         imageView = findViewById(R.id.image_tmb);
-        EditText titleField = findViewById(R.id.b_title);
-        EditText descField = findViewById(R.id.btn_desc);
-        EditText amountField = findViewById(R.id.btn_auth);
+        EditText titleField = findViewById(R.id.recrutement_add_nom);
+        EditText descField = findViewById(R.id.recrutement_add_description);
+        EditText amountField = findViewById(R.id.recrutement_add_salaire);
 
         // Vérifier si un card_id est passé pour la mise à jour
         Intent intent = getIntent();
@@ -138,9 +138,9 @@ public class PublishCard extends AppCompatActivity {
     private void loadCardData(int id) {
         Card card = db.cardDao().getCardById(id);
         if (card != null) {
-            ((EditText) findViewById(R.id.b_title)).setText(card.title);
-            ((EditText) findViewById(R.id.btn_desc)).setText(card.description);
-            ((EditText) findViewById(R.id.btn_auth)).setText(card.amount);
+            ((EditText) findViewById(R.id.recrutement_add_nom)).setText(card.title);
+            ((EditText) findViewById(R.id.recrutement_add_description)).setText(card.description);
+            ((EditText) findViewById(R.id.recrutement_add_salaire)).setText(card.amount);
             if (card.imageUri != null) {
                 imageUri = Uri.parse(card.imageUri);
                 imageView.setImageURI(imageUri);
@@ -174,9 +174,9 @@ public class PublishCard extends AppCompatActivity {
     }
 
     private boolean validateFields() {
-        EditText titleField = findViewById(R.id.b_title);
-        EditText descField = findViewById(R.id.btn_desc);
-        EditText amountField = findViewById(R.id.btn_auth);
+        EditText titleField = findViewById(R.id.recrutement_add_nom);
+        EditText descField = findViewById(R.id.recrutement_add_description);
+        EditText amountField = findViewById(R.id.recrutement_add_salaire);
 
         if (titleField.getText().toString().isEmpty()) {
             titleField.setError("Title is required");

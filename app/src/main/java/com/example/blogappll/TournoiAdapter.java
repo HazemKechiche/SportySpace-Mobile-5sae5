@@ -127,11 +127,11 @@ public class TournoiAdapter extends RecyclerView.Adapter<TournoiAdapter.TournoiV
 
         public TournoiViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.b_title);
-            description = itemView.findViewById(R.id.btn_desc);
-            prix = itemView.findViewById(R.id.btn_auth);
+            title = itemView.findViewById(R.id.recrutement_add_nom);
+            description = itemView.findViewById(R.id.recrutement_add_description);
+            prix = itemView.findViewById(R.id.recrutement_add_salaire);
             image = itemView.findViewById(R.id.image_tmb);
-            nombrePlace = itemView.findViewById(R.id.btn_nombreplace);
+            nombrePlace = itemView.findViewById(R.id.recrutement_add_localisation);
             deleteButton = itemView.findViewById(R.id.delete_button);
             updateButton = itemView.findViewById(R.id.update_button);
         }

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Default behavior: load Home fragment or any other fragment
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.main_container, new Home()) // Load Home fragment by default
+                    .replace(R.id.main_container, new HomeRecrutement()) // Load Home fragment by default
                     .commit();
         }
     }

@@ -72,10 +72,10 @@ public class YourCustomAdapter extends RecyclerView.Adapter<YourCustomAdapter.Vi
         ImageView image;
         public ViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.b_title);
-            description = itemView.findViewById(R.id.btn_desc);
-            prix = itemView.findViewById(R.id.btn_auth);
-            nombrePlace = itemView.findViewById(R.id.btn_nombreplace);
+            title = itemView.findViewById(R.id.recrutement_add_nom);
+            description = itemView.findViewById(R.id.recrutement_add_description);
+            prix = itemView.findViewById(R.id.recrutement_add_salaire);
+            nombrePlace = itemView.findViewById(R.id.recrutement_add_localisation);
 
             deleteButton = itemView.findViewById(R.id.delete_button);  // Bind the delete button
         }

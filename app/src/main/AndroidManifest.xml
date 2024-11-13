@@ -26,6 +26,9 @@
         <activity
             android:name=".CardDetails"
             android:exported="true" /> <!-- Activities -->
+        <activity android:name=".publishrecrutement"
+            android:exported="true"></activity>
+
         <activity
             android:name=".Publish"
             android:exported="true" /> <!-- Keep exported false if internal use only -->

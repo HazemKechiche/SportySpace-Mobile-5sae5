@@ -47,13 +47,13 @@ public class Publish extends AppCompatActivity {
                 .build();
 
         imageView = findViewById(R.id.image_tmb);
-        EditText titleField = findViewById(R.id.b_title);
-        EditText descField = findViewById(R.id.btn_desc);
-        EditText prixField = findViewById(R.id.btn_auth);
-        EditText nombrePlaceField = findViewById(R.id.btn_nombreplace);
+        EditText titleField = findViewById(R.id.recrutement_add_nom);
+        EditText descField = findViewById(R.id.recrutement_add_description);
+        EditText prixField = findViewById(R.id.recrutement_add_salaire);
+        EditText nombrePlaceField = findViewById(R.id.recrutement_add_localisation);
 
         // Get reference to the back arrow ImageView
-        ImageView backArrow = findViewById(R.id.back_arrow3);  // Assuming you added the ImageView for the back arrow in XML
+        ImageView backArrow = findViewById(R.id.back_arrow);  // Assuming you added the ImageView for the back arrow in XML
 
         // Set click listener for the back arrow
         backArrow.setOnClickListener(new View.OnClickListener() {
@@ -200,10 +200,10 @@ public class Publish extends AppCompatActivity {
     }
 
     private boolean validateFields() {
-        EditText titleField = findViewById(R.id.b_title);
-        EditText descField = findViewById(R.id.btn_desc);
-        EditText prixField = findViewById(R.id.btn_auth);
-        EditText nombrePlaceField = findViewById(R.id.btn_nombreplace);
+        EditText titleField = findViewById(R.id.recrutement_add_nom);
+        EditText descField = findViewById(R.id.recrutement_add_description);
+        EditText prixField = findViewById(R.id.recrutement_add_salaire);
+        EditText nombrePlaceField = findViewById(R.id.recrutement_add_localisation);
 
         if (titleField.getText().toString().isEmpty()) {
             titleField.setError("Title is required");

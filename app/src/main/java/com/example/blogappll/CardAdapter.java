@@ -127,9 +127,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
         public CardViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.b_title);
-            description = itemView.findViewById(R.id.btn_desc);
-            amount = itemView.findViewById(R.id.btn_auth);
+            title = itemView.findViewById(R.id.recrutement_add_nom);
+            description = itemView.findViewById(R.id.recrutement_add_description);
+            amount = itemView.findViewById(R.id.recrutement_add_salaire);
             image = itemView.findViewById(R.id.image_tmb);
             deleteButton = itemView.findViewById(R.id.delete_button);
             updateButton = itemView.findViewById(R.id.update_button);

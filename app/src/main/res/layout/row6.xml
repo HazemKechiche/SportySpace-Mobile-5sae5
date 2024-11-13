@@ -36,7 +36,7 @@
 
         <!-- Title of the card -->
         <TextView
-            android:id="@+id/b_title"
+            android:id="@+id/recrutement_add_nom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -50,10 +50,10 @@
 
         <!-- Description of the Card -->
         <TextView
-            android:id="@+id/btn_desc"
+            android:id="@+id/recrutement_add_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/b_title"
+            android:layout_below="@id/recrutement_add_nom"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="4dp"
             android:layout_toEndOf="@id/image_card"
@@ -65,10 +65,10 @@
 
         <!-- Amount -->
         <TextView
-            android:id="@+id/btn_auth"
+            android:id="@+id/recrutement_add_salaire"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_desc"
+            android:layout_below="@id/recrutement_add_description"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/image_card"
             android:text="Amount"
@@ -80,7 +80,7 @@
             android:id="@+id/button_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_auth"
+            android:layout_below="@id/recrutement_add_salaire"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="8dp"
             android:orientation="horizontal">

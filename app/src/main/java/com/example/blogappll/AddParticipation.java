@@ -18,7 +18,7 @@ public class AddParticipation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_participation);
 
-        ImageView backArrow = findViewById(R.id.back_arrow3);
+        ImageView backArrow = findViewById(R.id.back_arrow);
 
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override

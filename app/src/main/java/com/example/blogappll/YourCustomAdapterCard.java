@@ -73,9 +73,9 @@ public class YourCustomAdapterCard extends RecyclerView.Adapter<YourCustomAdapte
         ImageView image;
         public ViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.b_title);
-            description = itemView.findViewById(R.id.btn_desc);
-            amount = itemView.findViewById(R.id.btn_auth);
+            title = itemView.findViewById(R.id.recrutement_add_nom);
+            description = itemView.findViewById(R.id.recrutement_add_description);
+            amount = itemView.findViewById(R.id.recrutement_add_salaire);
 
             deleteButton = itemView.findViewById(R.id.delete_button);  // Bind the delete button
         }

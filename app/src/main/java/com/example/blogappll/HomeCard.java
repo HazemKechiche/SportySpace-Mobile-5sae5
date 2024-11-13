@@ -51,7 +51,7 @@ public class HomeCard extends Fragment {
         loadCards();
 
         // Set up the button for going to the front activity
-        Button goToFrontButton = view.findViewById(R.id.goToFrontButton);
+       Button goToFrontButton = view.findViewById(R.id.goToFrontButton);
         goToFrontButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

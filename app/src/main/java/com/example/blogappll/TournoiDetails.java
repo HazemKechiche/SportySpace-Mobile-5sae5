@@ -18,9 +18,9 @@ public class TournoiDetails extends AppCompatActivity {
 
 
         // Get references to the UI components
-        TextView title = findViewById(R.id.blog_details_title);
-        TextView description = findViewById(R.id.blog_details_description);
-        TextView prix = findViewById(R.id.blog_details_author);
+        TextView title = findViewById(R.id.recrutement_details_nomposte);
+        TextView description = findViewById(R.id.recrutement_details_description);
+        TextView prix = findViewById(R.id.recrutement_details_salaire);
         ImageView image = findViewById(R.id.blog_details_image);
 
         // Get reference to the back arrow ImageView
@@ -56,7 +56,7 @@ public class TournoiDetails extends AppCompatActivity {
         }
 
         // Find the "Participate" button and set the click listener
-        Button participateButton = findViewById(R.id.btn_participate); // Make sure this ID matches your layout
+        Button participateButton = findViewById(R.id.btn_postuler); // Make sure this ID matches your layout
         participateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
