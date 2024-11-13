@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.userinterfaceproject">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -28,6 +28,28 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false"/>
+        <activity android:name=".HomeActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".PasswordResetActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".NewPasswordActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".VerifyCodeActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.VERIFY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AdminDashboardActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
 
 
     </application>
