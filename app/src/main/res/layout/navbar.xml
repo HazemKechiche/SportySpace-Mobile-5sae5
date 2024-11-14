@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/navbar.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#6ED36E"
+    android:padding="16dp">
+
+    <!-- Back Arrow Button -->
+    <ImageView
+        android:id="@+id/backArrowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:contentDescription="Back"
+        android:src="@drawable/retour" />
+
+    <!-- Title in the center -->
+    <TextView
+        android:id="@+id/navbarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Title"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <!-- Menu Button on the right -->
+    <ImageView
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="Menu"
+        android:src="@drawable/ic_menu" />
+</RelativeLayout>

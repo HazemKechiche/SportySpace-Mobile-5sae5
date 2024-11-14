@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image"
+    android:fillViewport="true"> <!-- Set background image here -->
+
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Back"
+            android:padding="4dp"
+            android:src="@drawable/retour" />
+
+
+        <!-- Blog Image -->
+        <ImageView
+            android:id="@+id/blog_details_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="Blog Image"
+            android:scaleType="centerCrop" />
+
+        <!-- Blog Title -->
+        <TextView
+            android:id="@+id/blog_details_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Blog Title"
+            android:textColor="#074207"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Blog Author -->
+        <TextView
+            android:id="@+id/blog_details_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Author"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <!-- Blog Description -->
+        <TextView
+            android:id="@+id/blog_details_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Blog description goes here"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Blog App</string>
+    <string name="publish_blog">PUBLISH BLOG</string>
+    <string name="title_activity_drawer_actvity">DrawerActvity</string>
+    <string name="nav_header_title">Blog App</string>
+    <string name="nav_header_subtitle">youtube.com/artorean</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Publish Blog</string>
+    <string name="menu_slideshow">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_description" />
+    <string name="title_activity_acceuil">Acceuil</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_dashbord">Dashbord</string>
+
+
+</resources>
