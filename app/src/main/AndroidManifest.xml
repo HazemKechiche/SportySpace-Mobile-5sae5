@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.userinterfaceproject">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission-->
+<!--        android:name="android.permission.READ_MEDIA_IMAGES"-->
+<!--        tools:targetApi="31" />-->
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".HomeActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".PasswordResetActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".NewPasswordActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".VerifyCodeActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.VERIFY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AdminDashboardActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".Acceuil"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".Publish"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".Publish4"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".TournoiDetails"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".CardDetails"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".AddParticipation"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".MainActivity4"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity android:name=".MainActivity"
+            android:exported="false">
+            <!-- You can add other configurations like theme, label, etc. -->
+        </activity>
+        <activity
+            android:name=".TerrainDetails"
+            android:exported="false" />
+
+        <activity
+            android:name=".Publish2"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"/>
+        <activity android:name=".publishrecrutement"
+            android:exported="true"/>
+        <activity android:name=".MainActivity5"
+            android:exported="true"/>
+        <activity
+            android:name=".Recrutement_detail"
+            android:exported="true" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+
+
+
+    </application>
+    <queries>
+        <!-- Declare that you want to query apps that can handle geo URIs -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+        <!-- Optional: Explicitly include Google Maps as a potential handler -->
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+
+</manifest>
